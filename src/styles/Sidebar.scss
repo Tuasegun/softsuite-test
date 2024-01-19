@@ -1,13 +1,47 @@
 .sidebar-container{
-    border-right: 1px solid #000;
+ 
     width: 22%;
+    padding: 0px 16px;
+    background: #FFF;
+    position: relative;
+   .switch-container{
+        display: flex;
+        column-gap: 20px;
+        align-items: center;
+        border-radius: 4px;
+        padding: 8px;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        .switch-card{
+            display: flex;
+            column-gap: 16px;
+            align-items: center;
+        }
+        .switch-profile{
+            .switch-text{
+                font-size:14px;
+                font-family: 'Gilroy';
+                font-weight: 400;
+                color: #2D416F;
+            }
+            .desc-text{
+                font-size: 16px;
+                font-weight: 600;
+                font-family: 'Gilroy';
+                margin-top: 5px;
+            }
+            .dropdown-icon{
+                font-size: 20px;
+                color: #2D416F;
+            }
+        }
 
-
+   }
     .sidebar-container-items{
         display: flex;
         flex-direction: column; 
         row-gap: 25px; 
-        padding: 0px 16px;
+      
         padding-bottom: 40px;
         border-bottom: 1px solid #96A0B7;
 
@@ -57,7 +91,7 @@
             background-color: #4BAA79;
             display: flex;
             align-items: center; 
-            padding: 10px 15px; 
+            padding: 8px 15px; 
             cursor: pointer;
             border-radius: 6px;
             justify-content: space-between;
@@ -88,11 +122,60 @@
        flex-direction: column;
        row-gap: 3px;
        margin-top: 10px;
+       width: 70%;
         .sub-item-title{
             padding: 10px 15px;
             background: #F3FFF1; 
             font-size: 14px;
             color: #2D416F;
+            cursor: pointer;
+        }
+    }
+    .sidebar-container-items-bottom{
+        display: flex;
+        flex-direction: column; 
+        row-gap: 25px; 
+        padding-top: 40px;       
+        .sidebar-item{
+            display: flex;
+            align-items: center; 
+            padding: 10px 15px; 
+            cursor: pointer;
+            border-radius: 6px;
+            justify-content: space-between;
+            .title-icon{
+                display: flex;
+                align-items: center;
+                column-gap: 20px;
+                .sidebar-icon{
+                    font-size: 20px;
+                    color: #818DA9;
+                }
+                .sidebar-title{
+                    font-size: 16px;
+                    color: #818DA9;
+                    font-family: 'Gilroy';
+                    font-weight: 400;
+                }
+            }
+            .sub-icon{
+                margin-top: 0.5rem;
+                font-size: 20px;
+                color: #818DA9;
+              
+            }
+            &:hover{
+                background-color: #CDE1E3;
+               .title-icon{
+                     .sidebar-title{
+                          color: #2D416F;
+                     }
+               }
+               .sub-icon{
+                color: #2D416F;
+                
+                }
+            }
         }
     }
 }
