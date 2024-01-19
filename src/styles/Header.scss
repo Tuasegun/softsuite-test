@@ -1,0 +1,89 @@
+.header-container{
+    display: flex;
+    padding: 20px 2%;
+    justify-content: space-between;
+    background-color: #FFF;
+    .left-container{
+        display: flex;
+        width: 75%;
+        .org-dropdown{
+            margin-left: 10%;
+            margin-right: 5%;
+            display: flex;
+            background-color: #F6F7F9;
+            padding: 8px;
+            column-gap: 20px;
+            align-items: center;
+            border-radius: 4px;
+
+            .org-profile{
+                .change-text{
+                    font-size:14px;
+                    font-weight: 500;
+                }
+                .paper-text{
+                    font-size: 16px;
+                    font-weight: 600;
+                    font-family: 'Gilroy';
+                    margin-top: 8px;
+                }
+            }
+        }
+
+        .search-box{
+            display: flex;
+            height: 57px;
+            input{
+                padding: 00px 23px;
+                width: 250px;
+                border-radius: 4px 0px 0px 4px;
+                border: 1px solid #DFDFDF;
+              
+                &::placeholder{
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #57678C;
+                    font-family: 'Gilroy';
+                }
+            }
+            button{
+                background-color: #4BAA79;
+                border: none;
+                border-radius: 0px 6px 6px 0px;
+                padding: 0px 15px;
+                cursor: pointer;
+               .search-icon{
+                   color: #fff;
+                   font-size: 20px;
+               }
+            }
+        }
+
+    }
+    .right-container{
+        display: flex;
+        column-gap: 40px;
+        align-items: center;
+        .profile-user{
+            display: flex;
+            column-gap: 21px;
+            align-items: center;
+
+            .profile-details{
+                .username{
+                    font-size: 18px;
+                    color: #2D416F;
+                    font-family: 'Gilroy';
+                    font-weight: 600;
+                }
+                .role{
+                    color: #818DA9;
+                    font-size: 16px;
+                    font-family: 'Gilroy';
+                    font-weight: 400;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}
