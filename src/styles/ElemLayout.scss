@@ -1,0 +1,51 @@
+.form-row{
+    display: flex;
+    column-gap: 24px;
+    margin-bottom: 24px;
+
+    .radio-container{
+        width: 100%;
+        .radio-label{
+            color: #818DA9;
+            font-size: 16px;
+            font-family: 'Gilroy';
+            font-weight: 400;  
+        }
+        // display: flex;
+        // column-gap: 10px;
+    }
+    .select-container{
+      width: 100%;
+      .basic-multi-select{
+        width: 100%;
+        .select__control{
+            border-radius: 4px;
+            border: 1px solid #E5E5E5;
+            background: #fff;
+            padding: 16px;
+            color: #818DA9;
+            &::placeholder{
+                color: #818DA9;
+                font-size: 16px;
+                font-weight: 400;
+                font-family: 'Gilroy';
+            }
+        }
+        .select__menu{
+            border-radius: 4px;
+            border: 1px solid #E5E5E5;
+            background: #fff;
+            padding: 16px;
+            color: #818DA9;
+            &::placeholder{
+                color: #818DA9;
+                font-size: 16px;
+                font-weight: 400;
+                font-family: 'Gilroy';
+            }
+        }
+
+    }
+    }
+   
+}

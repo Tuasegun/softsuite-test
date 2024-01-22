@@ -1,0 +1,33 @@
+.element-section-container{
+    background-color: #F4F6F8;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+
+    .element-directories{
+        display: flex;   
+        width: 100%;
+        align-items: center;
+        column-gap: 8px;
+        .element-directory{
+            align-items: center;
+            cursor: pointer;
+            
+            .element-directory-icon{
+                width: 24px;
+                height: 24px;
+                color: #57678C;
+            }
+            .element-directory-text{
+                color:#ABB3C5;
+                font-size: 16px;
+                font-family: 'Gilroy';
+                font-weight: 800;
+            }
+            .active{
+                color: #2D416F;
+                font-weight: 800;
+            }
+        }
+    }
+}

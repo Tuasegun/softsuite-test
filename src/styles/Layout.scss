@@ -1,0 +1,10 @@
+.layout-container{
+    .body-container{
+        display: flex;
+        .child-container{
+            flex: 1;
+            overflow-y: auto;
+            
+        }
+    }
+}

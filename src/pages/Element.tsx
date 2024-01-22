@@ -1,9 +1,13 @@
 import React from 'react'
 import { Layout } from '../containers/Layout'
+import {ElementsSection} from '../features/Elements'
 export const Element = () => {
   return (
     <div>
-        <Layout/>
+        <Layout>
+          <ElementsSection/>
+        </Layout>
+
     </div>
   )
 }
