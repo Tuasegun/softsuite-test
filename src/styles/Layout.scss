@@ -1,10 +1,13 @@
 .layout-container{
     .body-container{
         display: flex;
-        .child-container{
-            flex: 1;
+        .sidebar-container-layout{
+            width: 20%;
+        }
+        .children-container{
+            // flex: 1;
             overflow-y: auto;
-            
+            width: 80%;
         }
     }
 }

@@ -16,6 +16,8 @@ export interface CreateElementValuesInterface {
     selectedMonths: string[];
     payFrequency: string;
     modifiedBy: string;
+    createdAt: string;
+    id: string;
   }
   
   export const createElementInititalValues: CreateElementValuesInterface = {
@@ -35,5 +37,7 @@ export interface CreateElementValuesInterface {
     effectiveEndDate: '',
     selectedMonths: [],
     payFrequency: 'Monthly',
-    modifiedBy: 'Segun'
+    modifiedBy: 'Segun Oguntuase',
+    createdAt: '',
+    id: '',
   };

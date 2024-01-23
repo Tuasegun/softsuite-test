@@ -1,0 +1,23 @@
+.popover-items{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 0.5rem;
+    .pop-item{
+        padding: 8px 7px;
+        display: flex;
+        font-size: 12px;
+        color: #2D416F;
+        font-family: 'Gilroy';
+        column-gap: 8px;
+        cursor: pointer;
+        &:hover{
+            border : 1px solid #2D416F;
+            border-radius: 4px;
+            padding: 8px 7px;
+        }
+    }
+    .delete{
+        color: #E05453;
+    }
+}

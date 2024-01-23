@@ -1,33 +1,111 @@
-.element-section-container{
-    background-color: #F4F6F8;
+.element-section-container {
+  background-color: #f4f6f8;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 10px 95px 0px 48px;
+  .element-directories {
+    display: flex;
     width: 100%;
-    height: 100%;
-    overflow-y: auto;
+    align-items: center;
+    column-gap: 8px;
+    .element-directory {
+      align-items: center;
+      cursor: pointer;
 
-    .element-directories{
-        display: flex;   
-        width: 100%;
+      .element-directory-icon {
+        width: 24px;
+        height: 24px;
+        color: #57678c;
+      }
+      .element-directory-text {
+        color: #abb3c5;
+        font-size: 16px;
+        font-family: "Gilroy";
+        font-weight: 800;
+      }
+      .active {
+        color: #2d416f;
+        font-weight: 800;
+      }
+    }
+  }
+  .elem-body-container {
+    background-color: #fff;
+    margin-top: 16px;
+    padding: 24px;
+    .container-title {
+      h5 {
+        font-size: 16px;
+        font-family: "Gilroy";
+        font-weight: 800;
+        color: #2d416f;
+      }
+    }
+    .search-bar-container {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      background-color: #f4f6f8;
+      padding: 16px;
+      justify-content: space-between;
+      margin-top: 24px;
+      .search-sort-container {
+        display: flex;
         align-items: center;
         column-gap: 8px;
-        .element-directory{
-            align-items: center;
+        .search-bar {
+          display: flex;
+          input {
+            width: 100%;
+            padding: 8px 16px;
+            border-radius: 6px 0px 0px 6px;
+            border: 1px solid #e5e5e5;
+            background-color: #fff;
+            color: #818da9;
+            &::placeholder {
+              color: #818da9;
+              font-size: 14px;
+              font-weight: 400;
+              font-family: "Gilroy";
+            }
+          }
+          .search-button {
+            background-color: #4baa79;
+            border: none;
+            border-radius: 0px 6px 6px 0px;
+            padding: 8px 16px;
             cursor: pointer;
-            
-            .element-directory-icon{
-                width: 24px;
-                height: 24px;
-                color: #57678C;
+            .search-icon {
+              color: #fff;
+              font-size: 20px;
             }
-            .element-directory-text{
-                color:#ABB3C5;
-                font-size: 16px;
-                font-family: 'Gilroy';
-                font-weight: 800;
-            }
-            .active{
-                color: #2D416F;
-                font-weight: 800;
-            }
+          }
         }
+        .sort-button-container {
+          .sort-button {
+            background-color: #2d416f;
+            border-radius: 6px;
+            padding: 8px 10px;
+            cursor: pointer;
+          }
+        }
+      }
+      .create-element-button-container {
+        .create-element-button {
+          background-color: #4baa79;
+          border-radius: 4px;
+          padding: 8px 10px;
+          cursor: pointer;
+          color: #fff;
+          font-size: 16px;
+          font-family: "Gilroy";
+          .create-element-icon {
+            color: #fff;
+            font-size: 12px;
+          }
+        }
+      }
     }
+  }
 }

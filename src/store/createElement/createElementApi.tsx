@@ -14,8 +14,28 @@ export const createElementApi = createApi({
                 body: body,
             }),
         }),
+        getCreatedElement: builder.mutation({
+            query: ()=> ({
+                url: "/elements",
+                method: "GET",
+            })
+        }),
+       fetchLookUp: builder.mutation({
+            query: (id) => ({
+                url: `/lookups/${id}/lookupvalues`,
+                method: "GET",
+            })
+        }),
+      fetchCategoryAndClassification: builder.query<any,{lookupId: number; lookupValueId: number }>({
+      query: ({ lookupId, lookupValueId }) =>
+        `lookups/${lookupId}/lookupvalues/${lookupValueId}`,
+    }),
     }),
 });
 
 
-export const { useCreateElementMutation } = createElementApi;
+export const { useCreateElementMutation,
+    useGetCreatedElementMutation,
+        useFetchLookUpMutation,
+        useFetchCategoryAndClassificationQuery
+} = createElementApi;
