@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import {ElemInput} from '../../components'
@@ -17,7 +17,7 @@ interface ElemForm2Props {
 
 export const ElemForm2 = ({handlePrev, initialValues, previousStep}: ElemForm2Props) => {
     const [isDisabled, setIsDisabled] = useState(true);
-    const [apiCall, isLoading] = useCreateElementMutation();
+    const [apiCall] = useCreateElementMutation();
   return (
     <div>
     <Formik
@@ -34,6 +34,7 @@ export const ElemForm2 = ({handlePrev, initialValues, previousStep}: ElemForm2Pr
         console.log("here")
         apiCall(values).unwrap().then((result)=>{
             console.log(result)
+            confirm("Element created successfully")
         }).catch((error)=>{
             console.log(error)
         })
@@ -48,7 +49,7 @@ export const ElemForm2 = ({handlePrev, initialValues, previousStep}: ElemForm2Pr
                 formik.handleSubmit();
             }}            
         >
-            <div className="form-row">
+            <div className="form-row top-spacer">
                 {/* startdate */}
                 <ElemInput
                     Name="effectiveStartDate"
@@ -227,7 +228,7 @@ export const ElemForm2 = ({handlePrev, initialValues, previousStep}: ElemForm2Pr
                     name="status"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    
+                    value={formik.values.status ? 'Active' : 'Inactive'}
                     />
                     <FormLabel htmlFor="status" mb="0">
                     {
@@ -239,15 +240,16 @@ export const ElemForm2 = ({handlePrev, initialValues, previousStep}: ElemForm2Pr
           </div>
 
       
-
-            <div className="prev-button">
-                <button type="button" onClick={previousStep}>Prev</button>
+            <div className="button-container">
+            <div className="cancel-button">
+                <button type="button" onClick={previousStep}>Previous</button>
             </div>
-            <div className="next-button">
+            <div className="submit-button">
                 <button type="submit"
-                   
                 >Submit</button>
             </div>
+            </div>
+
         </Form>
     )}
     </Formik>

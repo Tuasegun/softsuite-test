@@ -34,7 +34,7 @@ interface ElemTextAreaInterface {
 
   export interface ElemSelectOption {
     label: string;
-    value: number;
+    value: number | string;
   }
 
 
@@ -108,17 +108,23 @@ export const ElemSelect = ({
   Options,
   Value,
 }: ElemSelectInterface) => {
-    const [field, meta] = useField(Name);
+    const [field] = useField(Name);
   const formik = useFormikContext();
 
-//   const handleChange = (e) => {
-//     const selectedValue = e.target.value;
-//     formik.setFieldValue(Name, selectedValue);
-//     formik.setFieldTouched(Name, true);
-//     if (OnChange) {
-//       OnChange(selectedValue);
-//     }
-//   };
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    OnChange(e);
+    //@ts-ignore
+    OnBlur({ ...field, target: { ...field.target, name: Name } } as React.FocusEvent<HTMLInputElement>);
+    formik.setFieldTouched(Name, true, true);
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLSelectElement>) => {
+    OnBlur(e);
+     //@ts-ignore
+    OnBlur({ ...field, target: { ...field.target, name: Name } } as React.FocusEvent<HTMLInputElement>);
+    formik.setFieldTouched(Name, true, true);
+  };
+
   return (
     <div className="elem-input-wrapper">
       <label className="elem-input-label">{LabelText}</label>
@@ -126,26 +132,23 @@ export const ElemSelect = ({
         name={Name}
         placeholder={Placeholder}
         disabled={Disabled}
-        onChange={OnChange}
-        onBlur={() => {
-            OnBlur(field);
-            OnBlur({ ...field, target: { ...field.target, name: Name } });
-            formik.setFieldTouched(Name, true, true);
-          }}
-  
+        onChange={handleChange}
+        onBlur={handleBlur}
         onFocus={OnFocus}
-        className="elem-input"
         aria-placeholder={Placeholder}
-        value={Value || ''}  
+        value={Value || ''}
+        borderRadius="4px"
+        border="1px solid #E5E5E5"
+        _placeholder={{
+          color: "#818DA9",
+          fontSize: "16px",
+          fontWeight: "500",
+          textAlign: "left",
+        }}
+        height="58px"
       >
         {Options.map((option, index) => (
-          <option key={index} value={option?.value}
-          onClick={() => {
-            OnBlur(field);
-            OnBlur({ ...field, target: { ...field.target, name: Name } });
-            formik.setFieldTouched(Name, true, true);
-          }}
-          >
+          <option key={index} value={option?.value}>
             {option?.label}
           </option>
         ))}

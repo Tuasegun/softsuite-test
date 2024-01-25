@@ -38,7 +38,8 @@ const theme = extendTheme({
       }
     },
     }
-})
+
+      })
 
 function App() {
   return (

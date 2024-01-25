@@ -7,11 +7,11 @@ export const Header  = () => {
         <div className="header-container">
                 <div className="left-container">
                 <div className="logo-container">
-                    <img  src="assets/icons/logo.svg" alt="logo"/>
+                    <img  src="/assets/icons/logo.svg" alt="logo"/>
                 </div>
                 <div className="org-dropdown">
                 <div className="home-icon-container">
-                <img src="assets/icons/homeIcon.svg" alt="homIcon"/>
+                <img src="/assets/icons/homeIcon.svg" alt="homIcon"/>
                 </div>             
                 <div className="org-profile">
                     <p className="change-text">
@@ -34,12 +34,12 @@ export const Header  = () => {
                 </div>
                 <div className="right-container">
                 <div className="notification-container">
-                    <img src="assets/icons/notifIcon.svg" alt=""/>
+                    <img src="/assets/icons/notifIcon.svg" alt=""/>
                 </div>
                 <div className="profile-user">
                 
                     <div className="avatar-container">
-                        <img src="assets/icons/avatar.svg" alt=""/>
+                        <img src="/assets/icons/avatar.svg" alt=""/>
                     </div>
                     <div className="profile-details">
                         <p className="username">

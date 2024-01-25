@@ -14,7 +14,7 @@ export const Sidebar = () => {
       <div className="switch-container">
                 <div className="switch-card">
                 <div className="switch-icon-container">
-                <img src="assets/icons/switch.svg" alt="switchIcon"/>
+                <img src="/assets/icons/switch.svg" alt="switchIcon"/>
                 </div>             
                 <div className="switch-profile">
                     <p className="switch-text">

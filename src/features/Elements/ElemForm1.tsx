@@ -9,8 +9,9 @@ import { fetchLookupValues } from "../../store/lookups/lookupsSlice";
 interface ElemForm1Props {
   handleNext: (values: CreateElementValuesInterface) => void;
   initialValues: CreateElementValuesInterface;
+  closeModal: () => void;
 }
-interface lookupValuesInt {
+export interface lookupValuesInt {
   label: string;
   value: number;
   lookupId: number;
@@ -19,7 +20,7 @@ interface FormikType {
   setFieldValue: (field: string, value: number) => void;
 }
 
-export const ElemForm1 = ({ handleNext, initialValues }: ElemForm1Props) => {
+export const ElemForm1 = ({ handleNext, initialValues, closeModal }: ElemForm1Props) => {
   const dispatch = useDispatch();
   // const lookupValues = useSelector(selectLookupValues);
   const [classificationOptions, setClassificationOptions] = useState<
@@ -55,21 +56,16 @@ export const ElemForm1 = ({ handleNext, initialValues }: ElemForm1Props) => {
     };
     fetchOptions(2, setClassificationOptions);
     fetchOptions(1, setCategoryOptions);
-    fetchOptions(3, setPayRunOptions);
+    fetchOptions(5, setPayRunOptions);
   }, [dispatch]);
 
   const handleClassificationChange = (
     selectedId: number,
     formik: FormikType
   ) => {
-    console.log("Selected Classification Id:", selectedId);
-    console.log("classificationopt", classificationOptions);
     const selectedOption = classificationOptions.find(
       (option: lookupValuesInt) => option.value == selectedId
     );
-
-    console.log("Selected Classification Option:", selectedOption);
-
     if (selectedOption) {
       formik.setFieldValue("classificationId", selectedOption.lookupId);
       formik.setFieldValue("classificationValueId", selectedOption.value);
@@ -80,7 +76,6 @@ export const ElemForm1 = ({ handleNext, initialValues }: ElemForm1Props) => {
     const selectedOption = categoryOptions.find(
       (option: lookupValuesInt) => option.value == selectedId
     );
-    console.log(selectedOption, "select cart");
     if (selectedOption) {
       formik.setFieldValue("categoryId", selectedOption.lookupId);
       formik.setFieldValue("categoryValueId", selectedOption.value);
@@ -103,9 +98,7 @@ export const ElemForm1 = ({ handleNext, initialValues }: ElemForm1Props) => {
       <Formik
         initialValues={initialValues}
         validationSchema={Yup.object({
-          name: Yup.string()
-            .max(15, "Must be 15 characters or less")
-            .required("Name Required"),
+          name: Yup.string().required("Name Required"),
           classificationValueId: Yup.number()
             .required("Classification Required")
             .typeError("Classification must be a number"),
@@ -149,8 +142,7 @@ export const ElemForm1 = ({ handleNext, initialValues }: ElemForm1Props) => {
             return;
           }
           handleNext(values);
-          console.log(values);
-          alert(JSON.stringify(values));
+        
         }}
       >
         {(formik) => (
@@ -160,7 +152,7 @@ export const ElemForm1 = ({ handleNext, initialValues }: ElemForm1Props) => {
               formik.handleSubmit();
             }}
           >
-            <div className="form-row">
+            <div className="form-row top-spacer">
               <ElemInput
                 Name="name"
                 Placeholder="Name"
@@ -256,9 +248,15 @@ export const ElemForm1 = ({ handleNext, initialValues }: ElemForm1Props) => {
                 ErrorText={formik.errors.reportingName}
               />
             </div>
-            <div className="next-button">
+            <div className="button-container">
+            <div className="cancel-button">
+              <button type="button" onClick={closeModal}>Cancel</button>
+            </div>
+            <div className="submit-button">
               <button type="submit">Next</button>
             </div>
+            </div>
+            
           </Form>
         )}
       </Formik>

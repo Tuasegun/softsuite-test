@@ -107,5 +107,37 @@
         }
       }
     }
+
+    .element-link-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      .element-link-card{
+        padding: 7px 24px;
+        border: 1px solid #D4D8E2;
+        .link-title{
+          color: #7E7E7E;
+          font-family: 'Gilroy';
+          font-size: 11px;
+          font-weight: 500;
+          line-height: 150%;
+        }
+        .link-description{
+          color: #2D416F;
+          font-family: 'Gilroy';
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%;
+        }
+      }
+    }
   }
+}
+
+.modal-title{
+  color: #2D416F;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 20px;
 }

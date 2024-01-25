@@ -6,7 +6,7 @@ export const Webroutes = () =>{
     <>
     <Routes>
         <Route index path="/" element={<Element/>} />
-        <Route path="/elementslink/:id" element={<ElementsLink/>} />
+        <Route path="/:id/elementslink" element={<ElementsLink/>} />
     </Routes>
     </>
     )

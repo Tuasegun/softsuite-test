@@ -1,5 +1,5 @@
 import { useFetchCategoryAndClassificationQuery } from "../store/createElement";
-
+import {useFetchSubOrgQuery, useFetchDepartmentQuery} from '../store/createElement/createElementApi'
 export interface lookUps{
     lookupId: number;
     lookupValueId: number;
@@ -15,6 +15,30 @@ export const ElementLookupValues = ({
     });
     return data?.name
 }
+
+export const DepartmentValue = ({
+  suborganizationId,
+  id,
+}: {
+  suborganizationId: any;
+  id: any;
+}) => {
+  const { data } =useFetchDepartmentQuery({
+    suborganizationId: suborganizationId.toString(),
+    id: id.toString(),
+  });
+
+  return data?.name;
+};
+
+
+export const SubOrganizationValue = (id: any) => {
+  const { data } =  useFetchSubOrgQuery(id.toString());
+  return data?.name;
+};
+
+
+
 
 export const convertTimestamp = (timestamp: string): string => {
     const inputDate = new Date(timestamp);
@@ -36,3 +60,4 @@ export const convertTimestamp = (timestamp: string): string => {
   
     return `${formattedDate} || ${formattedTime}`;
   };
+

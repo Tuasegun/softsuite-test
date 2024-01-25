@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Modal from "react-modal";
 import { ElementCreateForm } from "./ElementCreateForm";
 import "../../styles/ElemSection.scss";
@@ -87,13 +87,12 @@ export const ElementsSection = () => {
         isOpen={isModalOpen}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Create Element Modal"
+        contentLabel="Create Element"
         ariaHideApp={false}
       >
         {/* Your modal content goes here */}
-        <h2>Create Element</h2>
-        <ElementCreateForm />
-        <button onClick={closeModal}>Close Modal</button>
+        <h2 className="modal-title">Create Element</h2>
+        <ElementCreateForm closeModal={closeModal} />
       </Modal>
     </div>
   );

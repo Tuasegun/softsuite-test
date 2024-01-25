@@ -7,11 +7,13 @@ import {Popover, PopoverContent, Flex, Box, PopoverTrigger} from '@chakra-ui/rea
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEdit2Line } from "react-icons/ri";
 import "../../styles/ElemTable.scss";
+import {useNavigate} from 'react-router-dom'
 
 export const ElementCreateTable = () => {
     const [apiCall, isLoading] = useGetCreatedElementMutation()
     const [data, setData] = useState()
-    
+    const navigate = useNavigate()
+
     const fetchData =()=>{
       if(isLoading){
         const result = apiCall("arg").unwrap().then((result)=>{
@@ -101,7 +103,9 @@ export const ElementCreateTable = () => {
                          
                                 <PopoverContent width="100%">
                                     <div className="popover-items">
-                                    <div className="pop-item">
+                                    <div className="pop-item"
+                                  onClick={() => navigate(`${row.id}/elementslink`)}
+                                    >
                                         <MdOutlineRemoveRedEye/>
                                         <p>View ElementLinks</p>
                                     </div>

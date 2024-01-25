@@ -44,55 +44,55 @@ table {
 
 @font-face {
     font-family: 'Gilroy';
-    src: url(./assets/fonts/Gilroy-Light.ttf);
+    src: url(/assets/fonts/Gilroy-Light.ttf);
     font-weight: 300; /* Light */
 }
 
 @font-face {
     font-family: 'Gilroy';
-    src: url(./assets/fonts/Gilroy-UlraLight.ttf);
+    src: url(/assets/fonts/Gilroy-UlraLight.ttf);
     font-weight: 100; /* Ultra Light */
 }
 
 @font-face {
     font-family: 'Gilroy';
-    src: url(./assets/fonts/Gilroy-Thin.ttf);
+    src: url(/assets/fonts/Gilroy-Thin.ttf);
     font-weight: 200; /* Thin */
 }
 
 @font-face {
     font-family: 'Gilroy';
-    src: url(./assets/fonts/Gilroy-SemiBold.ttf);
+    src: url(/assets/fonts/Gilroy-SemiBold.ttf);
     font-weight: 600; /* Semi-Bold */
 }
 
 @font-face {
     font-family: 'Gilroy';
-    src: url(./assets/fonts/Gilroy-Regular.ttf);
+    src: url(/assets/fonts/Gilroy-Regular.ttf);
     font-weight: 400; /* Regular */
 }
 
 @font-face {
     font-family: 'Gilroy';
-    src: url(./assets/fonts/Gilroy-Medium.ttf);
+    src: url(/assets/fonts/Gilroy-Medium.ttf);
     font-weight: 500; /* Medium */
 }
 
 @font-face {
     font-family: 'Gilroy';
-    src: url(./assets/fonts/Gilroy-Heavy.ttf);
+    src: url(/assets/fonts/Gilroy-Heavy.ttf);
     font-weight: 700; /* Heavy */
 }
 
 @font-face {
     font-family: 'Gilroy';
-    src: url(./assets/fonts/Gilroy-ExtraBold.ttf);
+    src: url(/assets/fonts/Gilroy-ExtraBold.ttf);
     font-weight: 800; /* Extra Bold */
 }
 
 @font-face {
     font-family: 'Gilroy';
-    src: url(./assets/fonts/Gilroy-Black.ttf);
+    src: url(/assets/fonts/Gilroy-Black.ttf);
     font-weight: 900; /* Black */
 }
 :root {
